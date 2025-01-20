@@ -9,3 +9,8 @@ RUN apt-get update --quiet --yes && apt-get install --quiet --yes \
     texlive-latex-extra \
     texlive-fonts-recommended \
     texlive-fonts-extra
+
+# Create default user.
+RUN useradd --create-home --shell /bin/bash fredrik
+USER fredrik
+WORKDIR /home/fredrik
